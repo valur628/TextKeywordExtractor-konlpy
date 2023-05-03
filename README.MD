@@ -1,5 +1,5 @@
-# Text Keyword Extractor
-### _파인튜닝 텍스트 키워드 추출기_
+# TextKeywordExtractor-konlpy
+### _파인튜닝용 키워드 데이터 추출기 - konlpy 기반_
 
 >박주철
 
@@ -7,7 +7,7 @@
 openAI fine-tune에 사용할 훈련 데이터를 만드는 프로그램 <br><br>
 모델 훈련인 fine-tune을 이용하려면 대량의 훈련 데이터가 필요했다. 하지만 수작업으로 만드는 건 힘든데다가, 사람이라서 일관성을 갖기 힘들 수도 있었다.
 기본적으로 input.txt 내의 데이터를 일정 단위로 분할한 다음, 각자 일정 글자수 이내의 요약문으로 만든다. 분할문과 요약문은 훈련 데이터를 쓸 수 있는 형태로 변환된다. 이렇게 만들어진 training_data는 '.jsonl'의 형태로 저장된다.
-[openAI fine-tune training data generator]와 차이가 있다면, 해당 프로그램은 문장 내에서 자주 사용하는 키워드를 사용자가 설정한 이하의 개수만큼 추출해서 prompt의 요약문에 넣는 것을 주 목적으로 한다. openAI를 사용하지 않기에 기본적으로 요금 걱정을 할 필요가 없다.
+[TextKeywordExtractor-openAI]와 차이가 있다면, 해당 프로그램은 문장 내에서 자주 사용하는 키워드를 사용자가 설정한 이하의 개수만큼 추출해서 prompt의 요약문에 넣는 것을 주 목적으로 한다. openAI를 사용하지 않기에 기본적으로 요금 걱정을 할 필요가 없다.
 ***
 
 # 상세
@@ -46,15 +46,17 @@ openAI fine-tune에 사용할 훈련 데이터를 만드는 프로그램 <br><br
 - **konlpy 설치가 종종 잘 안 될 수도 있음. 워낙 경우가 다양하다보니 인터넷 검색이 필요.**
 
 ### 기타
-- [openAI fine-tune training data generator]와 다르게 의도되었던 대로 잘 작동함.
-- 이제 openAI fine-tune을 하면 될 것 같음.
+- [TextKeywordExtractor-openAI]와 다르게 의도되었던 대로 잘 작동함.
+- 이제 [FineTuningTextHelper-openAI]로 openAI fine-tune을 하면 될 것 같음.
 
 ### 관련 리포지토리
-- [openAI fine-tune training data generator] - openAI를 이용하여 내용 요약을 추출하는 프로그램.
-- [Text Keyword Extractor] - openAI fine-tune training data generator의 문제점을 해결하기 위해 새로 제작한 프로그램.
+- [TextKeywordExtractor-openAI] - txt 파일에서 요약문을 추출해서 openAI fine-tune 훈련 데이터를 만드는 프로그램. openAI GPT 기반.
+- [TextKeywordExtractor-konlpy] - txt 파일에서 키워드를 추출해서 openAI fine-tune 훈련 데이터를 만드는 프로그램. konlpy 기반.
+- [FineTuningTextHelper-openAI] - 글도우미 작업을 위한 openAI fine-tune 훈련 작업을 진행하는 웹사이트. openAI 기반.
 
-
-   [openAI fine-tune training data generator]: <https://github.com/valur628/openAI-fine-tune-training-data-generator>
+   [TextKeywordExtractor-openAI]: <https://github.com/valur628/TextKeywordExtractor-openAI>
+   [TextKeywordExtractor-konlpy]: <https://github.com/valur628/TextKeywordExtractor-konlpy>
+   [FineTuningTextHelper-openAI]: <https://github.com/valur628/FineTuningTextHelper-openAI>
    [Python 3.10]: <https://www.python.org/downloads/release/python-3100/>
    [konlpy]: <https://konlpy.org/ko/latest/index.html>
    [json]: <https://www.json.org/json-en.html>
