@@ -4,7 +4,8 @@
 # 개요
 >openAI fine-tune에 사용할 훈련 데이터를 만드는 프로그램.
 
-모델 훈련인 fine-tune을 이용하려면 대량의 훈련 데이터가 필요했다. 하지만 수작업으로 만드는 건 힘든데다가, 사람이라서 일관성을 갖기 힘들 수도 있었다. 기본적으로 input.txt 내의 데이터를 일정 단위로 분할한 다음, 각자 일정 글자수 이내의 키워드로 만든다. 분할문과 키워드는 훈련 데이터를 쓸 수 있는 형태로 변환된다. 이렇게 만들어진 training_data는 '.jsonl'의 형태로 저장된다. [TextSummaryExtractor-openAI]와 차이가 있다면, 해당 프로그램은 문장 내에서 자주 사용하는 키워드를 사용자가 설정한 이하의 개수만큼 추출해서 prompt의 키워드에 넣는 것을 주 목적으로 한다. openAI를 사용하지 않기에 기본적으로 요금 걱정을 할 필요가 없다.
+모델 훈련인 fine-tune을 이용하려면 대량의 훈련 데이터가 필요했다. 하지만 수작업으로 만드는 건 힘든데다가, 사람이라서 일관성을 갖기 힘들 수도 있었다. 기본적으로 input.txt 내의 데이터를 일정 단위로 분할한 다음, 각자 일정 글자수 이내의 키워드로 만든다. 분할문과 키워드는 훈련 데이터를 쓸 수 있는 형태로 변환된다.
+이렇게 만들어진 training_data는 '.jsonl'의 형태로 저장된다. [TextSummaryExtractor-openAI]와 차이가 있다면, 해당 프로그램은 문장 내에서 자주 사용하는 키워드를 사용자가 설정한 이하의 개수만큼 추출해서 prompt의 키워드에 넣는 것을 주 목적으로 한다. openAI를 사용하지 않기에 기본적으로 요금 걱정을 할 필요가 없다.
 ***
 
 # 상세
@@ -47,11 +48,11 @@
 - 이제 [FineTuningTextHelper-openAI]로 openAI fine-tune을 하면 될 것 같음.
 
 ### 관련 리포지토리
-- [TextKeywordExtractor-openAI] - txt 파일에서 요약문을 추출해서 openAI fine-tune 훈련 데이터를 만드는 프로그램. openAI GPT 기반.
+- [TextSummaryExtractor-openAI] - txt 파일에서 요약문을 추출해서 openAI fine-tune 훈련 데이터를 만드는 프로그램. openAI GPT 기반.
 - [TextKeywordExtractor-konlpy] - txt 파일에서 키워드를 추출해서 openAI fine-tune 훈련 데이터를 만드는 프로그램. konlpy 기반.
 - [FineTuningTextHelper-openAI] - 글도우미 작업을 위한 openAI fine-tune 훈련 작업을 진행하는 웹사이트. openAI 기반.
 
-   [TextKeywordExtractor-openAI]: <https://github.com/valur628/TextKeywordExtractor-openAI>
+   [TextSummaryExtractor-openAI]: <https://github.com/valur628/TextSummaryExtractor-openAI>
    [TextKeywordExtractor-konlpy]: <https://github.com/valur628/TextKeywordExtractor-konlpy>
    [FineTuningTextHelper-openAI]: <https://github.com/valur628/FineTuningTextHelper-openAI>
    [Python 3.10]: <https://www.python.org/downloads/release/python-3100/>
